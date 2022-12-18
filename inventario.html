@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a class="nav_item" href="index.html"><p>Reducir inventario</p></a>
+
+    <a class="nav_item" href="inventario.html"><p>Administrar productos</p></a>
+
+    <h1>Software</h1>
+</nav>
+    
+    <div class="head">
+        
+        <div class="breadcrum">
+            <h2>Administrar inventario</h2> 
+        </div>
+
+    </div>
+    
+    <div class="btn-zone">
+        <a href="#modalAdd" class="btn">Agregar</a>
+    </div>
+    
+    <div class="card">
+        <main>
+            <table>
+                <thead>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Cantidad    
+                    </th>
+                    <th>
+                        Precio unidad
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
+                </thead>
+                <tbody>
+                    <!-- registros -->
+                    <tr>
+                        <td>
+                            Camiseta polo talla M
+                        </td>
+                        <td class="cantidad">
+                            20
+                        </td>
+                        <td class="precio">
+                            35.000
+                        </td>
+                        <!-- acciones -->
+                        <td class="acciones">
+                            <a href="#modalEdit">
+                                Editar
+                            </a>
+                            <a href="#modalDelete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Camiseta polo talla M
+                        </td>
+                        <td class="cantidad">
+                            20
+                        </td>
+                        <td class="precio">
+                            35.000
+                        </td>
+                        <!-- acciones -->
+                        <td class="acciones">
+                            <a href="#modalEdit">
+                                Editar
+                            </a>
+                            <a href="#modalDelete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Camiseta polo talla M
+                        </td>
+                        <td class="cantidad">
+                            20
+                        </td>
+                        <td class="precio">
+                            35.000
+                        </td>
+                        <!-- acciones -->
+                        <td class="acciones">
+                            <a href="#modalEdit">
+                                Editar
+                            </a>
+                            <a href="#modalDelete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Camiseta polo talla M
+                        </td>
+                        <td class="cantidad">
+                            20
+                        </td>
+                        <td class="precio">
+                            35.000
+                        </td>
+                        <!-- acciones -->
+                        <td class="acciones">
+                            <a href="#modalEdit">
+                                Editar
+                            </a>
+                            <a href="#modalDelete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Camiseta polo talla M
+                        </td>
+                        <td class="cantidad">
+                            20
+                        </td>
+                        <td class="precio">
+                            35.000
+                        </td>
+                        <!-- acciones -->
+                        <td class="acciones">
+                            <a href="#modalEdit">
+                                Editar
+                            </a>
+                            <a href="#modalDelete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div class="card">
+
+    <!-- Modal para agregar -->
+    <div class="modal" id="modalAdd">
+        <div class="modal_body">
+            <div class="modal_body-head">
+                <h4>Agregar producto</h4>
+                <span><a href="">X</a></span>
+            </div>
+            <div class="modal_body-content">
+                <form action="">
+                    <input class="input" type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+                    <input class="input" type="number" placeholder="Cantidad" name="cantidad" id="cantidad" required>
+                    <input class="input" type="text" placeholder="Precio" name="precio" id="precio" required>
+                    <button type="submit" class="btn_guardar">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar -->
+    <div class="modal" id="modalEdit">
+        <div class="modal_body">
+            <div class="modal_body-head">
+                <h4>Editar producto</h4>
+                <span><a href="">X</a></span>
+            </div>
+            <div class="modal_body-content">
+                <form action="">
+                    <input class="input" type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+                    <input class="input" type="number" placeholder="Cantidad" name="cantidad" id="cantidad" required>
+                    <input class="input" type="text" placeholder="Precio" name="precio" id="precio" required>
+                    <button type="submit" class="btn_guardar">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

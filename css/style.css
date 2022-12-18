@@ -1,0 +1,389 @@
+:root {
+    --backcolor:lightgray;
+    --navcolor:gray;
+    --navh:100px;
+    --cardw:90%;
+    --cardpadding:15px;
+    --marginSections:auto;
+    --droplist_color:lightblue;
+}
+
+html, body, .modal {
+    width: 100vw;
+    height: 100%;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    
+    background-color: var(--backcolor);
+
+    overflow-x: hidden;
+}
+
+
+/* Modal */
+
+.modal {
+    display: none;
+
+    background-color: rgb(0, 0, 0, 0.6);
+    position: absolute;
+
+    align-items: center;
+}
+
+.modal:target {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal_body {
+    background-color: white;
+    
+    border-radius: 20px;
+    
+    width: 45%;
+    min-height: 50%;
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+
+    position: relative;
+}
+
+.modal_body-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid lightgray;
+}
+
+.modal_body-head h4 {
+    margin-left: 10px;
+}
+
+.modal_body-head span {
+    position: absolute;
+    right: 2%;
+    top: 10px;
+}
+
+.modal_body-head span a {
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+form:nth-child(1) {
+    margin-top: 30px;
+}
+
+.input {
+    border: none;
+
+    width: 50%;
+    height: 50px;
+    font-size: 2rem;
+
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+    outline: none;
+
+    display: flex;
+}
+
+.input:focus {
+    border-bottom: 1px solid blue;
+}
+
+.btn_guardar {
+    display: block;
+    padding: 10px;
+    font-size: 25px;
+
+    border: none;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    background-color: #009933;
+    color: white;
+
+    width: 35%;
+    height: 80px;
+}
+
+.btn_guardar:hover {
+    background-color: green;
+}
+
+
+/* Navbar */
+
+nav {
+    background-color: var(--navcolor);
+    
+    font-size: 25px;
+
+    width: 100%;
+    height: var(--navh);
+    min-height: var(--navh);
+
+
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav_item {
+    height: 100%;
+    padding: 0 20px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_item:hover {
+    background-color: aqua;
+    color: black;
+}
+
+
+h1 {
+    margin: 0;
+}
+
+
+/* Head */
+
+.head {
+    width: var(--cardw);
+    
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: var(--marginSections);
+    margin-right: var(--marginSections);
+    padding:var(--cardpadding);
+
+    border-radius: 5px;
+
+    background-color: lightseagreen;
+}
+
+
+/* Boton */
+
+.btn-zone {
+    width: 10%;
+    height: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 0 0 50px;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 25px;
+    background-color: #009933;
+    color: aliceblue;
+}
+
+.btn:hover {
+    background-color: green;
+}
+
+
+/* Card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    width: var(--cardw);
+    min-height: 500px;
+    height: auto;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: var(--marginSections);
+    margin-right: var(--marginSections);
+    padding: var(--cardpadding);
+    align-items: center;
+    
+    border-radius: 5px;
+
+    font-size: 25px;
+
+    background-color: aliceblue;
+}
+
+.card p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Search */
+
+.contenido {
+    min-width: 70%;
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 20px;
+}
+
+.busqueda {
+    width: 40%;
+    background-color: aliceblue;
+    border: 1px solid #009933;
+    padding: 10px;
+    border-radius: 30px;
+    
+    position: relative;
+}
+
+#search {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: 0px;
+    font-size: 25px;
+}
+
+
+/* Resultados */
+
+/* .resultado {
+    display: none;
+} */
+
+.resultado {
+    width: 60%;
+    margin-top: 5px;
+    border-radius: 5px;
+    position: relative;
+    background-color: var(--droplist_color);
+}
+
+.resultado:before {
+    content:"";
+    position: absolute;
+    background-color: var(--droplist_color);
+    height: 20px;
+    width: 20px;
+    top: -15px;
+    left: 50%;
+}
+
+.opcion {
+    display: block;
+
+    width: 100%;
+    margin: 0;
+    padding: 3px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.opcion:hover {
+    background-color: aquamarine;
+}
+
+.vacio {
+    background-color: unset;
+}
+
+
+/* Etiquetas */
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+
+/* Tabla */
+
+table {
+    margin: 0;
+    width: 100%;
+}
+
+th {
+    background-color: lightblue;
+}
+
+tbody tr td:nth-child(2) {
+    text-align: center;
+}
+
+tbody tr td:nth-child(3) {
+    text-align: center;
+}
+
+tbody tr td:nth-child(4) {
+    text-align:center;
+}
+
+tr {
+    background-color: antiquewhite;
+}
+
+tr:nth-child(even) {
+    background-color: wheat;
+}
+
+
+/* Formulario para reducir stock */
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.search-box {
+    width: 60%;
+    border: solid 1px black;
+}
+
+
+
