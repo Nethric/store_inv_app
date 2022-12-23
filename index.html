@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Software - inventario de almacen</title>
+        <link rel="stylesheet" href="src/css/style.css">
+        <link rel="shortcut icon" href="src/img/icon-site.png" type="image/x-icon">
+    </head>
+    <body>
+
+    <!-- Modal para agregar -->
+    <div class="modal" id="modal">
+        <div class="modal_body">
+            <div class="modal_head">
+                <h3 class="title"></h3>
+            </div>
+            <form>
+                <input type="text" name="nombre" id="nombre" placeholder="Digite el nombre">
+                <input type="number" name="cantidad" id="cantidad" placeholder="Digite la cantidad" required>
+                <div class="modal_footer">
+                    <button id="btnGuardar">Guardar</button>
+                    <a href="#inputSearch" id="close">Cerrar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Zona de boton para agregar -->
+    <div class="actions" id="actions">
+        <a href="#modal" class="addLink">
+            Agregar
+        </a>
+        <h2>Software</h2>
+    </div>
+
+    <main>
+        <div class="card" id="card">
+            <!-- Zona del input de busqueda -->
+            <div class="searchBox">
+
+                <input type="search" name="inputSearch" id="inputSearch" placeholder="Digite el nombre del producto a buscar">
+
+                <!-- droplist -->
+                <div class="dropList">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="src/js/app.js"></script>
+</body>
+</html>
