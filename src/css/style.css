@@ -265,3 +265,38 @@ form {
     text-decoration: none;
     color: black;
 }
+
+
+@media screen and (min-width:1920){
+    .addLink {
+        font-size: 60px;
+    }
+
+    .actions h2 {
+        font-size: 60px;
+    }
+
+    .searchBox input {
+        font-size: 40px;
+    }
+
+    .droplist {
+        font-size: 20px;
+    }
+
+    .modal_body {
+        font-size: 40px;
+    }
+
+    .modal_head .title {
+        font-size: 50px;
+    }
+
+    #nombre, #cantidad {
+        font-size: 34px;
+    }
+
+    .modal_footer button {
+        font-size: 40px;
+    }
+}
