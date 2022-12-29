@@ -9,10 +9,13 @@ if(location.href.includes("modal")){
     location.href="./";
 }
 
-//datos de productos, guardados de forma local
-let data = JSON.parse(localStorage.getItem("productos"))
+//sugerencia: en una funcion ir tomando elementos, uno para clases y otro para id
 
-// console.log(data)
+//datos de productos, guardados de forma local
+// localStorage.setItem("products", JSON.stringify([{nombre:"Gorra azul", precio:"9000", cantidad:45}]))
+let data = JSON.parse(localStorage.getItem("products"))
+
+console.log(data)
 
 
 var input = document.querySelector("#inputSearch")
@@ -128,12 +131,18 @@ function initAddModal(){
     h3.textContent = "Agregar"
     
     var nombre = document.querySelector("#nombre")
+    var precio = document.querySelector("#precio")
 
     if(nombre.hasAttribute("disabled")){
         nombre.removeAttribute("disabled")
     }
 
+    if(precio.hasAttribute("disabled")){
+        precio.removeAttribute("disabled")
+    }
+
     nombre.setAttribute("required", true)
+    precio.setAttribute("required", true)
 
     var btnGuardar = document.querySelector("#btnGuardar")
     btnGuardar.onclick = function() {
@@ -151,14 +160,14 @@ function addProduct(){
     let data = getDataForm()
     if(data.estado){
         //obteniendo y modificando datos locales
-        let array = JSON.parse(localStorage.getItem("productos"))
-        array.push({nombre:data.nombre, cantidad:parseInt(data.cantidad)})
-        localStorage.productos = JSON.stringify(array)
+        let array = JSON.parse(localStorage.getItem("products"))
+        array.push({nombre:data.nombre, precio:data.precio, cantidad:parseInt(data.cantidad)})
+        localStorage.products = JSON.stringify(array)
 
         var form = document.querySelector("form")
         form.reset()
 
-        alert("Producto agregado")
+        alert("Producto "+data.nombre+" / "+data.precio+" / "+data.cantidad+" agregado")
 
         location.href="./";
     }
@@ -178,6 +187,10 @@ function initialModalReduce(producto){
     var nombre = document.querySelector("#nombre")
     nombre.value = producto.nombre
     nombre.setAttribute("disabled", true)
+
+    var precio = document.querySelector("#precio")
+    precio.value = producto.precio
+    precio.setAttribute("disabled", true)
 
     var cantidad = document.querySelector("#cantidad")
     cantidad.value = producto.cantidad
@@ -199,7 +212,7 @@ function reduceProduct(){
     var form = document.querySelector("form")
     
     if(data.estado){
-        let array = JSON.parse(localStorage.getItem("productos"))
+        let array = JSON.parse(localStorage.getItem("products"))
         
         let nombre = data.nombre
         let cantidad = parseInt(data.cantidad)
@@ -210,7 +223,7 @@ function reduceProduct(){
                 alert("Producto reducido")
                 array[index].cantidad = cantidad
 
-                localStorage.productos = JSON.stringify(array)
+                localStorage.products = JSON.stringify(array)
 
                 break
             }
@@ -232,9 +245,11 @@ function initialModalEdit(producto){
     h3.textContent = "Editar"
     
     var nombreInput = document.querySelector("#nombre")
+    var precioInput = document.querySelector("#precio")
     var cantidadInput = document.querySelector("#cantidad")
 
     nombreInput.value = producto.nombre
+    precioInput.value = producto.precio
     cantidadInput.value = producto.cantidad
 
     if(nombreInput.hasAttribute("disabled")){
@@ -242,6 +257,7 @@ function initialModalEdit(producto){
     }
 
     nombreInput.setAttribute("required", true)
+    precioInput.setAttribute("required", true)
 
     var btnGuardar = document.querySelector("#btnGuardar")
     btnGuardar.onclick = function() {
@@ -260,7 +276,7 @@ function editProduct(nombreObjetivo){
     var form = document.querySelector("form")
     
     if(data.estado){
-        let array = JSON.parse(localStorage.getItem("productos"))
+        let array = JSON.parse(localStorage.getItem("products"))
         
         let nombre = data.nombre
         let cantidad = parseInt(data.cantidad)
@@ -270,9 +286,10 @@ function editProduct(nombreObjetivo){
             if(array[index].nombre.toLowerCase() == nombreObjetivo.toLowerCase()){
                 alert("Producto editado")
                 array[index].nombre = nombre
+                array[index].cantidad = precio
                 array[index].cantidad = cantidad
 
-                localStorage.productos = JSON.stringify(array)
+                localStorage.products = JSON.stringify(array)
 
                 break
             }
@@ -287,7 +304,7 @@ function editProduct(nombreObjetivo){
 function deleteProduct(objetivo){
     if (confirm("¿Quieres eliminar el producto "+objetivo.nombre+"?")) {
 
-        let array = JSON.parse(localStorage.getItem("productos"))
+        let array = JSON.parse(localStorage.getItem("products"))
 
         //obteniendo el registro que coincide con el seleccionado para eliminarlo
         for (let index = 0; index < array.length; index++) {            
@@ -295,7 +312,7 @@ function deleteProduct(objetivo){
 
                 array.splice(index, 1)
 
-                localStorage.productos = JSON.stringify(array)
+                localStorage.products = JSON.stringify(array)
                 
                 alert("Producto eliminado")
 
@@ -314,7 +331,7 @@ function getDataForm() {
     var cantidad = document.querySelector("#cantidad")
     
     if(form.checkValidity()){
-        return { estado:true, nombre:nombre.value, cantidad:cantidad.value }
+        return { estado:true, nombre:nombre.value, precio:precio.value, cantidad:cantidad.value }
     }
 }
 
