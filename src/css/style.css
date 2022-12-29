@@ -6,7 +6,7 @@
     --actionsBackColor:#678983;
     --transitionHover: all .2s ease-in-out;
     --modalWidth:30%;
-    --modalHeight:70%;
+    --modalHeight:80%;
     --lineOff:2px solid lightgray;
     --lineOn:2px solid cyan;
 }
@@ -209,7 +209,7 @@ form {
     align-items: center;
 }
 
-#nombre, #cantidad {
+#nombre, #precio, #cantidad {
     display: block;
 
     border: none;
